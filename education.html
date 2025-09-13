@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education | My Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Education</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="education.html" class="active">Education</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+ <main>
+  <section>
+    <h2>Education</h2>
+
+    <div class="edu-card">
+      <h3>B.Tech in Computer Science & Engineering</h3>
+      <p>Pimpri Chinchwad University, Pune</p>
+      <p><strong>2023 – Present</strong></p>
+      <p>Current CGPA: 8.5 (3rd Year)</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Higher Secondary (12th – HSC)</h3>
+      <p>Shripatrao Bhosale High School, Osmanabad</p>
+      <p><strong>Passing Year: 2023</strong></p>
+      <p>Percentage: 82%</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Secondary (10th – CBSE)</h3>
+      <p>Podar International School, Osmanabad</p>
+      <p><strong>Passing Year: 2021</strong></p>
+      <p>Percentage: 93%</p>
+    </div>
+
+  </section>
+</main>
+
+
+  <footer>
+    <p>© 2025 Bhakti Andhare</p>
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+    
+    const links = document.querySelectorAll("nav ul li a");
+    links.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = e.target.href;
+
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, 500); // wait for animation
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

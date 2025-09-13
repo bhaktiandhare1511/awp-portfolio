@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbies | My Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Hobbies</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="hobbies.html" class="active">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>My Interests & Hobbies</h2>
+      <ul class="hobby-list">
+      <li>📚 Reading & Learning about Technology</li>
+      <li>💻 Coding Projects & Open-source Contributions</li>
+      <li>🎵 Listening to Music</li>
+      <li>✈️ Traveling & Exploring New Places</li>
+      <li>⚽ Playing Badminton </li>
+      <li>🎨 Creative Designing & UI/UX</li>
+    </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Bhakti Andhare</p>
+  </footer>
+
+  <!-- Page transition -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+      
+      const links = document.querySelectorAll("nav ul li a");
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = e.target.href;
+
+          document.body.classList.remove("fade-in");
+          document.body.classList.add("fade-out");
+
+          setTimeout(() => {
+            window.location.href = target;
+          }, 500);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

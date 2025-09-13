@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | My Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Get in Touch</h2>
+
+      <!-- Intro Message -->
+      <p class="contact-intro">
+        I’m always open to discussing internships, freelance projects, or collaborations in software development, cybersecurity, and data science.  
+        Fill out the form below or reach out directly via email at 
+        <strong>bhakti.andhare23@pcu.edu.in</strong> or phone <strong>+91-9307495515</strong>.
+      </p>
+
+      <!-- Contact Form -->
+      <form class="contact-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Bhakti Andhare | LinkedIn:
+      <a href="https://www.linkedin.com/in/bhakti-andhare-33b31b288/" target="_blank">
+        linkedin.com/in/bhakti-andhare-33b31b288
+      </a>
+    </p>
+  </footer>
+
+  <!-- Page transition + form script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Page fade-in effect
+      document.body.classList.add("fade-in");
+
+      // Navigation transitions
+      const links = document.querySelectorAll("nav ul li a");
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = e.target.href;
+
+          document.body.classList.remove("fade-in");
+          document.body.classList.add("fade-out");
+
+          setTimeout(() => {
+            window.location.href = target;
+          }, 500);
+        });
+      });
+
+      // Simple form submit handler (demo only)
+      const form = document.querySelector(".contact-form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("✅ Thank you! Your message has been sent.");
+        form.reset();
+      });
+    });
+  </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+    
+    const links = document.querySelectorAll("nav ul li a");
+    links.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = e.target.href;
+
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, 500); // wait for animation
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

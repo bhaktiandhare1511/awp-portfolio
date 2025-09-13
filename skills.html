@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | My Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Skills</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Technical Skills</h2>
+      <ul class="skill-bars">
+        <li>
+          <span>Python</span>
+          <div class="bar"><div class="progress" data-width="90%"></div></div>
+        </li>
+        <li>
+          <span>Django Web Framework</span>
+          <div class="bar"><div class="progress" data-width="85%"></div></div>
+        </li>
+        <li>
+          <span>Java / Java EE</span>
+          <div class="bar"><div class="progress" data-width="80%"></div></div>
+        </li>
+        <li>
+          <span>SQL & Databases</span>
+          <div class="bar"><div class="progress" data-width="85%"></div></div>
+        </li>
+        <li>
+          <span>Linux / Red Hat Administration</span>
+          <div class="bar"><div class="progress" data-width="75%"></div></div>
+        </li>
+        <li>
+          <span>HTML, CSS & JavaScript</span>
+          <div class="bar"><div class="progress" data-width="90%"></div></div>
+        </li>
+        <li>
+          <span>Cloud & OpenShift</span>
+          <div class="bar"><div class="progress" data-width="70%"></div></div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Bhaktin Andhare</p>
+  </footer>
+
+  <!-- Page transition + skill animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Page fade-in
+      document.body.classList.add("fade-in");
+      
+      // Navigation transitions
+      const links = document.querySelectorAll("nav ul li a");
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = e.target.href;
+
+          document.body.classList.remove("fade-in");
+          document.body.classList.add("fade-out");
+
+          setTimeout(() => {
+            window.location.href = target;
+          }, 500);
+        });
+      });
+
+      // Animate skill bars
+      const progressBars = document.querySelectorAll(".progress");
+      progressBars.forEach(bar => {
+        const targetWidth = bar.getAttribute("data-width");
+        setTimeout(() => {
+          bar.style.width = targetWidth;
+        }, 300);
+      });
+    });
+  </script>
+</body>
+</html>
